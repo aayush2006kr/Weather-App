@@ -143,3 +143,15 @@ body {
     color: rgba(255, 255, 255, 0.6);
     margin-top: 2px;
 }
+
+.error{
+    text-align:left;
+    margin-left: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
+}
+
+.weather{
+    display: none;
+}
