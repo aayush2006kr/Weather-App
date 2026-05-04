@@ -5,7 +5,9 @@ const searchBtn= document.querySelector(".search-box button");
 const weatherIcon= document.querySelector(".weather-icon");
 
 async function checkWeather(city) {
-    const response = await fetch(URL + city +`&appid=${apiKey}`);
+
+    try{
+const response = await fetch(URL + city +`&appid=${apiKey}`);
 
     if(response.status == 404){
         document.querySelector(".error").style.display= "block";
@@ -51,6 +53,13 @@ async function checkWeather(city) {
     humidity.textContent = data.main.humidity + "% ";
     wind.textContent = data.wind.speed + " kmph";
 
+    }
+    catch(error){
+    console.error("Error:", error.message);
+    document.querySelector(".error").style.display = "block";
+    document.querySelector(".weather").style.display = "none";
+    }
+    
 }
 
 searchBtn.addEventListener("click",()=>{
